@@ -33,18 +33,22 @@ const ultimaAvaliacao = computed(() => {
     <section class="cards">
       <div class="card">
         <h2>Total de cafés avaliados</h2>
-        <h1>{{ totalCafes }}</h1>
+        <h2>{{ totalCafes }}</h2>
+        <p>cafés</p>
       </div>
       <div class="card">
         <h2>Café com a maior nota</h2>
-        <h1>{{ melhorCafe?.calcularMedia }}</h1>
+        <h3>{{ melhorCafe?.calcularMedia }}</h3>
         <p>{{ melhorCafe?.nome }}</p>
       </div>
       <div class="card">
         <h2>Última Avaliação</h2>
-        <h1>{{ ultimaAvaliacao?.media }}</h1>
+        <h3>{{ ultimaAvaliacao?.media }}</h3>
         <p>{{ ultimaAvaliacao?.nome }}</p>
       </div>
+    </section>
+    <section class="botao">
+      <RouterLink class="ir" to="/avaliacao">Ver Avaliações</RouterLink>
     </section>
   </main>
 </template>
@@ -56,7 +60,7 @@ const ultimaAvaliacao = computed(() => {
   align-items: center;
   padding: 40px;
   margin-top: 40px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 15px;
 }
 
@@ -88,5 +92,35 @@ hr {
 
 p {
   font-size: 1.4rem;
+}
+
+.cards {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2vw;
+}
+
+.card {
+  border: solid 2px #ddd;
+  border-radius: 20px;
+  padding: 40px 60px;
+  text-align: center;
+}
+.card p {
+  color: #636363;
+}
+
+.botao {
+  margin-top: 2vw;
+  align-items: center;
+  display: flex;
+}
+.ir {
+  background-color: #8b5e3c;
+  padding: 1vw 3vw;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 </style>
