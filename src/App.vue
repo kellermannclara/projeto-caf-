@@ -3,78 +3,55 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+  <header class="navbar">
+    <div class="logo">Café Desafio</div>
+    <nav class="nav-links">
+      <RouterLink class="nav-item" to="/">Home</RouterLink>
+      <RouterLink class="nav-item" to="/avaliacao">Avalição</RouterLink>
+      <RouterLink class="nav-item" to="/ranking">Ranking</RouterLink>
+    </nav>
   </header>
 
-  <RouterView />
+  <main class="content">
+    <RouterView />
+    <!-- tudo que precisa ser renderizado pelas minhas rotas estará dentro dessa tag content, o responssavel por isso é o routerview -->
+  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
 
+.nav-links{
+display: flex;
+gap: 1.5rem;
+}
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.nav-item {
+  color: brown;
+  text-decoration: none;
+}
+.nav-item:hover,
+.nav-item.active {
+  text-decoration: none;
+  color: aquamarine;
+}
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

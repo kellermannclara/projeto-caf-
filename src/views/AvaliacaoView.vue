@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <h1>Página de Inicio - Cafés</h1>
+    <h1>Página de Avalição - Cafés</h1>
     <p>Bem vindos a nossa página</p>
   </main>
 </template>
