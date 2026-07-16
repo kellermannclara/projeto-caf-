@@ -6,7 +6,9 @@ import { calcularMedia } from '@/data/media';
 
 const totalCafes = computed(() => cafes.value.length)
 const melhorCafe = computed(() => {
-  return [...cafes.value].sort((a, b) => b.media - a.media)[0]
+  return [...cafes.value].sort(
+    (a, b) => calcularMedia(b) - calcularMedia(a)
+  )[0]
 })
 const ultimaAvaliacao = computed(() => {
   return cafes.value[cafes.value.length - 1]
@@ -38,12 +40,12 @@ const ultimaAvaliacao = computed(() => {
       </div>
       <div class="card">
         <h2>Café com a maior nota</h2>
-        <h3>{{ melhorCafe?.calcularMedia }}</h3>
+        <h3>{{ calcularMedia(melhorCafe) }}</h3>
         <p>{{ melhorCafe?.nome }}</p>
       </div>
       <div class="card">
         <h2>Última Avaliação</h2>
-        <h3>{{ ultimaAvaliacao?.media }}</h3>
+        <h3>{{ calcularMedia(ultimaAvaliacao) }}</h3>
         <p>{{ ultimaAvaliacao?.nome }}</p>
       </div>
     </section>

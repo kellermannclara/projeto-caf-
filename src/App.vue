@@ -4,6 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header class="navbar">
+    <img src="https://i.pinimg.com/736x/4a/b8/11/4ab8118b26620f94714f6f6b7fc5654e.jpg" alt="">
     <div class="logo">Café Desafio</div>
     <nav class="nav-links">
       <RouterLink class="nav-item" to="/">Home</RouterLink>
@@ -26,6 +27,10 @@ import { RouterLink, RouterView } from 'vue-router'
   align-items: center;
   padding: 1rem;
   background-color: #f5f5f5;
+}
+.navbar img {
+  width: 3rem;
+  height: auto;
 }
 
 .nav-links{

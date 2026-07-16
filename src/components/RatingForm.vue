@@ -1,3 +1,104 @@
-<script setup></script>
-<template></template>
-<style scoped></style>
+<script setup>
+import { cafes } from '@/data/coffees';
+import { calcularMedia } from '@/data/media';
+import { ref } from 'vue';
+
+const novoCafe = ref({
+    nome: '',
+    produtor: '',
+    aroma: 0,
+    sabor: 0,
+    acidez: 0,
+    corpo: 0,
+    finalizacao: 0,
+    observacao: ''
+})
+
+function adicionarCafe() {
+    if (!novoCafe.value.nome || !novoCafe.value.produtor || novoCafe.value.aroma === null || novoCafe.value.sabor === null || novoCafe.value.acidez === null || novoCafe.value.corpo === null || novoCafe.value.finalizacao === null) {
+        alert("Preencha todos os campos obrigatórios!");
+        return;
+    }
+
+    cafes.value.push({
+        id: Date.now(),
+        ...novoCafe.value
+    })
+
+    novoCafe.value = {
+        nome: '',
+        produtor: '',
+        aroma: 0,
+        sabor: 0,
+        acidez: 0,
+        corpo: 0,
+        finalizacao: 0,
+        observacao: ''
+    };
+}
+
+function limpar() {
+    novoCafe.value = {
+        nome: '',
+        produtor: '',
+        aroma: 0,
+        sabor: 0,
+        acidez: 0,
+        corpo: 0,
+        finalizacao: 0,
+        observacao: ''
+    };
+}
+
+</script>
+<template>
+    <div class="coisas">
+        <input type="text" v-model="novoCafe.nome" placeholder="Digite o nome do café...">
+        <input type="text" v-model="novoCafe.produtor" placeholder="Digite o nome do produtor...">
+        <input type="number" min="0" max="10" v-model.number="novoCafe.aroma">
+        <input type="number" min="0" max="10" v-model.number="novoCafe.sabor">
+        <input type="number" min="0" max="10" v-model.number="novoCafe.acidez">
+        <input type="number" min="0" max="10" v-model.number="novoCafe.corpo">
+        <input type="number" min="0" max="10" v-model.number="novoCafe.finalizacao">
+        <textarea v-model="novoCafe.observacao"></textarea>
+    </div>
+
+    <div class="media">
+        <h3>Media calculada</h3>
+        <p>{{ calcularMedia(novoCafe).toFixed(1) }}</p>
+    </div>
+    <div class="botao">
+        <button @click="adicionarCafe">Adicionar Avaliação</button>
+        <button @click="limpar">Limpar</button>
+    </div>
+
+
+</template>
+<style scoped>
+.coisas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.coisas input,
+.coisas textarea {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 12px;
+    background: #8b5e3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6f482d;
+}
+</style>
