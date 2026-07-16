@@ -52,16 +52,24 @@ function limpar() {
 
 </script>
 <template>
-    <div class="coisas">
+    <section class="coisas">
+        <p>Nome do Café</p>
         <input type="text" v-model="novoCafe.nome" placeholder="Digite o nome do café...">
+        <p>Nome do Produtor</p>
         <input type="text" v-model="novoCafe.produtor" placeholder="Digite o nome do produtor...">
+        <p>Aroma</p>
         <input type="number" min="0" max="10" v-model.number="novoCafe.aroma">
+        <p>Sabor</p>
         <input type="number" min="0" max="10" v-model.number="novoCafe.sabor">
+        <p>Acidez</p>
         <input type="number" min="0" max="10" v-model.number="novoCafe.acidez">
+        <p>Corpo</p>
         <input type="number" min="0" max="10" v-model.number="novoCafe.corpo">
+        <p>Finalização</p>
         <input type="number" min="0" max="10" v-model.number="novoCafe.finalizacao">
+        <p>Observação</p>
         <textarea v-model="novoCafe.observacao"></textarea>
-    </div>
+    </section>
 
     <div class="media">
         <h3>Media calculada</h3>
@@ -75,6 +83,7 @@ function limpar() {
 
 </template>
 <style scoped>
+
 .coisas {
     display: flex;
     flex-direction: column;
@@ -89,6 +98,15 @@ function limpar() {
     font-size: 1rem;
 }
 
+.media {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+    border: 1px solid #bbb;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
 button {
     padding: 12px;
     background: #8b5e3c;
@@ -96,6 +114,7 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin: 0 10px 0 0;
 }
 
 button:hover {

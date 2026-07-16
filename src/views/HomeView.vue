@@ -3,8 +3,9 @@ import { ref } from 'vue';
 import { computed } from 'vue';
 import { cafes } from '@/data/coffees';
 import { calcularMedia } from '@/data/media';
+import { totalCafes } from '@/data/media';
 
-const totalCafes = computed(() => cafes.value.length)
+// const totalCafes = computed(() => cafes.value.length)
 const melhorCafe = computed(() => {
   return [...cafes.value].sort(
     (a, b) => calcularMedia(b) - calcularMedia(a)

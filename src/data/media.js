@@ -1,3 +1,5 @@
+import { computed } from "vue"
+import { cafes } from "./coffees"
 export function calcularMedia(cafe) {
   return (
     cafe.aroma +
@@ -6,3 +8,5 @@ export function calcularMedia(cafe) {
     cafe.corpo +
     cafe.finalizacao ) / 5
 }
+
+export const totalCafes = computed(() => cafes.value.length)
