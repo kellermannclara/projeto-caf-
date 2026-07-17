@@ -1,44 +1,111 @@
-# .
+# ☕ Coffee Quality Challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+## Identificação
 
-## Recommended IDE Setup
+**Nome:** Clara Kellermann dos Santos  
+**Turma:** 2info2  
+**Disciplina:** Desenvolvimento Web
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Sobre o Projeto
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+O projeto consiste em um sistema para avaliação de cafés especiais. Os usuários podem cadastrar cafés, atribuir notas para diferentes critérios sensoriais e visualizar um ranking com base na média das avaliações.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tecnologias Utilizadas
 
-## Project Setup
+- Vue 3
+- Vue Router
+- Vite
+- JavaScript
+- HTML
+- CSS
 
-```sh
+---
+
+## Como Executar o Projeto
+
+### Executar localmente
+
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Acessar online
 
-```sh
-npm run build
-```
+Projeto publicado na Vercel:
 
-### Lint with [ESLint](https://eslint.org/)
+**https://projeto-caf.vercel.app**
 
-```sh
-npm run lint
-```
+---
+
+## Funcionalidades Implementadas
+
+- ✅ Página Home
+- ✅ Cadastro de avaliações
+- ✅ Listagem dos cafés avaliados
+- ✅ Cálculo automático da média
+- ✅ Ranking dos cafés
+- ✅ Limpeza do formulário
+- ✅ Validação dos campos obrigatórios
+
+---
+
+## Conceitos Vue.js Utilizados
+
+### Componentes
+
+- CoffeeCard.vue
+- RatingForm.vue
+- LeaderboardTable.vue
+
+### Props
+
+Utilizadas para enviar os dados dos cafés para os componentes.
+
+### Reactive State (ref)
+
+Utilizado para armazenar os dados do formulário e da lista de cafés.
+
+### Computed
+
+Utilizado para:
+
+- calcular o total de cafés;
+- encontrar o café com maior média;
+- ordenar os cafés no ranking.
+
+### Diretivas
+
+- `v-for` para listar cafés.
+- `v-model` para os campos do formulário.
+- `v-if` quando necessário.
+- `@click` para os botões.
+
+### Vue Router
+
+Utilizado para navegar entre:
+
+- Home
+- Avaliações
+- Ranking
+
+---
+
+## Evidências da Aplicação
+
+### Home
+
+![Home](images/home.png)
+
+### Avaliações
+
+![Avaliações](images/avaliacoes.png)
+
+### Ranking
+
+![Ranking](images/ranking.png)
+
