@@ -8,8 +8,10 @@ import { totalCafes } from '@/data/media';
   <main>
    <div class="geral">
      <h1>Ranking Geral</h1>
-     <p>Total de Cafés Avaliados</p>
+     <div class="texto">
+      <p>Total de Cafés Avaliados</p>
      <p>{{ totalCafes }}</p>
+     </div>
    </div>
 
     <LeaderboardTable/>
@@ -22,5 +24,15 @@ import { totalCafes } from '@/data/media';
 }
 .geral p {
   color: red;
+}
+.geral {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.texto {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 </style>

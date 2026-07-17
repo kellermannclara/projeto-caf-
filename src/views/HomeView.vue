@@ -41,12 +41,12 @@ const ultimaAvaliacao = computed(() => {
       </div>
       <div class="card">
         <h2>Café com a maior nota</h2>
-        <h3>{{ calcularMedia(melhorCafe) }}</h3>
+        <h2>{{ calcularMedia(melhorCafe) }}</h2>
         <p>{{ melhorCafe?.nome }}</p>
       </div>
       <div class="card">
         <h2>Última Avaliação</h2>
-        <h3>{{ calcularMedia(ultimaAvaliacao) }}</h3>
+        <h2>{{ calcularMedia(ultimaAvaliacao) }}</h2>
         <p>{{ ultimaAvaliacao?.nome }}</p>
       </div>
     </section>

@@ -84,6 +84,11 @@ function limpar() {
 </template>
 <style scoped>
 
+.coisa p {
+    color: white;
+    font-weight: bold;
+}
+
 .coisas {
     display: flex;
     flex-direction: column;
